@@ -8,23 +8,50 @@
 //   // you can see that it is a function like this
 // console.log((n) => 2*n)
 
-const doubleNumber = (n) => 2*n
-console.log(doubleNumber)
+// const doubleNumber = (n) => 2*n
+// console.log(doubleNumber)
 
-const simpleCalculation = doubleNumber
-console.log(simpleCalculation)
+// const simpleCalculation = doubleNumber
+// console.log(simpleCalculation)
 
-let newSalary = doubleNumber(1000000)
+// let newSalary = doubleNumber(1000000)
 
-const uppercaseMessage = (message) => {
-    return message.toUpperCase();
+// const uppercaseMessage = (message) => {
+//     return message.toUpperCase();
+// }
+
+//   // This function accepts as arguments a string message, and a function.
+//   // It then calls the given function to do its job.
+// const transform = (message, transformFunction) => {
+//     return transformFunction(message);
+// }
+
+// transform("hello", uppercaseMessage);
+
+
+// ///////// Exercise
+// const lowercaseMessage = (message) => {
+//     return message.toLowerCase();
+// }
+
+// const transform = (message, transformFunction) => {
+//     return transformFunction(message);
+// }
+
+// transform("WHY ARE YOU SHOUTING?", lowercaseMessage);
+
+///////// Challenge
+const notifyByEmail = (email) => {
+    return `Email sent to: ${email}`
 }
 
-  // This function accepts as arguments a string message, and a function.
-  // It then calls the given function to do its job.
-const transform = (message, transformFunction) => {
-    return transformFunction(message);
+const notifyByText = (phoneNumber) => {
+    return `Text sent to: ${phoneNumber}`
 }
 
+const notify = (emailOrPhoneNumber, transformFunction) => {
+    return transformFunction(emailOrPhoneNumber);
+}
 
-transform("hello", uppercaseMessage);
+notify('hello@makers.tech.test', notifyByEmail)
+notify('+10000000000', notifyByText)
